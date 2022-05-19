@@ -1,0 +1,22 @@
+@import './variables';
+@import './helpers';
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Lato:wght@400;700&display=swap');
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.grid {
+  max-width: 1526px;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: repeat(12, 1fr);
+  margin-inline: auto !important;
+}
