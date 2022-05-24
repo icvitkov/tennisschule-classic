@@ -1,11 +1,15 @@
 <script>
-import TsNavbar from './components/TsNavbar.vue'
+import TsMain from './components/TsMain.vue';
+import Advantages from './components/Advantages.vue';
+import Prices from './components/Prices.vue';
+import Coach from './components/Coach.vue';
 
 
 </script>
 
 <template>
-  <div>
-    <ts-navbar />
-  </div>
+     <ts-main />
+     <Advantages />
+     <Coach />
+     <Prices />
 </template>
