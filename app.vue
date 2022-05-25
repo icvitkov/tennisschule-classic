@@ -10,6 +10,6 @@ import Coach from './components/Coach.vue';
 <template>
      <ts-main />
      <Advantages />
-     <Coach />
      <Prices />
+     <Coach />
 </template>

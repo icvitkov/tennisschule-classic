@@ -6,7 +6,7 @@ import TsNavbar from './shared/TsNavbar.vue'
   <section class="main">
     <TsNavbar />
     <div class="block"></div>
-    <img src="assets/images/tennisPlayer.png" alt="" class="main__img" />
+    <img src="/images/tennisPlayer.png" alt="" class="main__img" />
     <div class="blocky--right"></div>
   </section>
 </template>
