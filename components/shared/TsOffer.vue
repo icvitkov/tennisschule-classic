@@ -20,7 +20,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .offer {
-  background-color: #eee;
+  background-color: var(--color-iceberg);
   padding: 20px;
   height: 100%;
   box-shadow: 20px 20px 0px 0px var(--color-lime);

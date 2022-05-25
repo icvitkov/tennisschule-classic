@@ -16,6 +16,7 @@
     grid-column: 1/-1;
     display: flex;
     justify-content: space-between;
+    color: var(--color-iceberg);
 
     &__items {
         display: flex;

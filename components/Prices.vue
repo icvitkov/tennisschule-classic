@@ -37,7 +37,7 @@ const camps = [
 <style lang="scss" scoped>
 .offers {
   padding-block: 40px;
-  background-color: rgba(31, 33, 48, 0.541);
+  background-color: var(--color-black) /* rgba(31, 33, 48, 0.541) */;
 
   &__title {
       grid-column: 1/3;
@@ -47,7 +47,7 @@ const camps = [
       padding-bottom: 32px;
       &::after {
       content: '';
-      background-color: #eee;
+      background-color: var(--color-iceberg);
       width: 100px;
       height: 3px;
       border-radius: 5px;

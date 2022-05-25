@@ -5,8 +5,13 @@ import TsNavbar from './shared/TsNavbar.vue'
 <template>
   <section class="main">
     <TsNavbar />
-    <div class="block"></div>
-    <img src="/images/tennisPlayer.png" alt="" class="main__img" />
+    <!-- <div class="block"></div> -->
+    <div class="main__hero">
+      <h1 class="main__title">
+        Spend an acitve holiday with Tennis School Oliver
+      </h1>
+      <img src="/images/racket.png" alt="" class="main__img" />
+    </div>
     <div class="blocky--right"></div>
   </section>
 </template>
@@ -16,11 +21,25 @@ import TsNavbar from './shared/TsNavbar.vue'
   height: 100vh;
   display: grid;
   overflow: hidden;
+  background-color: var(--color-black);
+
+  &__hero {
+    display: flex;
+    z-index: 2;
+    padding-inline: 20px;
+  }
+
+  &__title {
+    font-family: var(--font-secondary);
+    color: var(--color-iceberg);
+    font-size: 68px;
+    align-self: center;
+  }
 
   &__img {
-    height: 90vh;
     justify-self: center;
-    align-self: end;
+    align-self: center;
+    height: 70vh;
   }
 }
 .block {
@@ -36,13 +55,12 @@ import TsNavbar from './shared/TsNavbar.vue'
 }
 
 .blocky--right {
-  background-color: #cedc00;
+  background-color: var(--color-lime);
   width: 100%;
   height: 100%;
   border-radius: 5px;
   transform: skew(-55deg);
   position: absolute;
-  z-index: -1;
   left: 65%;
 }
 </style>

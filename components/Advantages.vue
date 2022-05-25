@@ -28,7 +28,7 @@
 
 <style lang='scss' scoped>
 .advantages {
-    background-color: #eee;
+    background-color: var(--color-iceberg);
     color: var(--color-gray);
     padding-block: 40px;
 
