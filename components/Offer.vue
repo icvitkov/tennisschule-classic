@@ -13,7 +13,7 @@ const camps = [
 </script>
 
 <template>
-  <section class="offers">
+  <section class="offers" id="offer">
     <div class="grid">
       <h2 class="offers__title">Our offer</h2>
       <div class="offers__container">

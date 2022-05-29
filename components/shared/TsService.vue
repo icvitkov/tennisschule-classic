@@ -8,6 +8,9 @@ defineProps({
 
 <template>
   <div class="service">
+    <div class="service__img">
+      <slot name="svg"></slot>
+    </div>
     <h3 class="service__title">{{ title }}</h3>
     <p class="service__info">{{ additionalInfo }}</p>
     <p class="service__price">{{ price }}</p>
@@ -21,10 +24,16 @@ defineProps({
   height: 100%;
   display: grid;
   text-align: center;
+  justify-items: center;
   color: var(--color-iceberg);
   &__title {
     font-size: 24px;
     font-family: var(--font-secondary);
+  }
+
+  &__img {
+    color: var(--color-lime);
+    padding-bottom: 20px;
   }
 
   &__price {

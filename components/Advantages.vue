@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<div class="advantages">
+<div class="advantages" id="info">
     <div class="grid">
         <TsAdvantages title="Tenis u Bretanide Sport & Wellness Resortu" img="/images/court.jpg" class="advantages__item">
             <template #description>

@@ -1,4 +1,6 @@
 <script setup>
+import TennisBall from '@/public/images/tennis-ball.svg'
+import Racket from '@/public/images/racket.svg'
 </script>
 
 <template>
@@ -6,10 +8,22 @@
     <div class="grid">
       <h2 class="services__title">Our services for you</h2>
       <div class="services__container">
-        <TsService title="Head Tour balls" additional-info="(3 pieces)" price="10.00 €"/>
-        <TsService title="Racquet rental per hour" price="4.00 €"/>
-        <TsService title="Ball rental per hour" price="2.00 €"/>
-        <TsService title="Court rental per hour" price="10.00 €"/>
+        <TsService
+          title="Head Tour balls"
+          additional-info="(3 pieces)"
+          price="10.00 €"
+        />
+        <TsService title="Racquet rental per hour" price="4.00 €">
+            <template #svg>
+                <Racket class="icon"/>
+            </template>
+        </TsService>
+        <TsService title="Ball rental per hour" price="2.00 €">
+          <template #svg>
+            <TennisBall class="icon" />
+          </template>
+        </TsService>
+        <TsService title="Court rental per hour" price="10.00 €" />
       </div>
     </div>
   </section>
@@ -43,5 +57,10 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 64px;
   }
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
 }
 </style>

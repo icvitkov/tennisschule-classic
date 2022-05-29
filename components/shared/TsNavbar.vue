@@ -3,10 +3,10 @@
   <nav class="nav">
     <img src="/images/logoTSduo.svg" alt="" class="nav__logo" />
     <div class="nav__items">
-      <NuxtLink to="#info" class="link">more info</NuxtLink>
-      <NuxtLink to="#info" class="link">offer</NuxtLink>
-      <NuxtLink to="#info" class="link">coach</NuxtLink>
-      <NuxtLink to="#info" class="link">contact</NuxtLink>
+      <a href="#info" class="link">more info</a>
+      <a href="#offer" class="link">offer</a>
+      <a href="#coach" class="link">coach</a>
+      <a href="#contact" class="link">contact</a>
     </div>
   </nav>
 </template>

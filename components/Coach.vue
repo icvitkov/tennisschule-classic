@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section class="coach">
+  <section class="coach" id="coach">
     <div class="grid">
       <div class="coach__description">
         <h2 class="coach__title">Coach Oliver</h2>
