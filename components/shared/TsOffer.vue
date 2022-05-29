@@ -13,7 +13,7 @@ defineProps({
         <span class="offer__name">{{ item.name }}</span>
         <span class="offer__price">{{ item.price }}</span>
       </div>
-      <p><slot name="additionalInfo"></slot></p>
+      <p class="offer__info"><slot name="additionalInfo"></slot></p>
     </div>
   </div>
 </template>
@@ -45,6 +45,15 @@ defineProps({
     display: flex;
     justify-content: space-between;
     padding-block: 12px;
+  }
+
+  &__price {
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__info {
+    font-size: 14px;
+    margin-top: 20px;
   }
 }
 </style>

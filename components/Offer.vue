@@ -15,20 +15,19 @@ const camps = [
 <template>
   <section class="offers">
     <div class="grid">
-    <h2 class="offers__title">Our offer</h2>
+      <h2 class="offers__title">Our offer</h2>
       <div class="offers__container">
-          <TsOffer
-            title="Training sessions for adults and youngsters"
-            :offer="sessions"
-          ></TsOffer>
-          <TsOffer
-            title="Summer camps for all levels"
-            :offer="camps"
-          ></TsOffer>
-          <TsOffer
-            title="Summer camps for all levels"
-            :offer="camps"
-          ></TsOffer>
+        <TsOffer
+          title="Training sessions for adults and youngsters"
+          :offer="sessions"
+        >
+          <template #additionalInfo>
+            Price includes: 50 min of training, tennis balls, tennis court, Head
+            racquet (children reacquets also available)
+          </template>
+        </TsOffer>
+        <TsOffer title="Summer camps for all levels" :offer="camps"></TsOffer>
+        <TsOffer title="Summer camps for all levels" :offer="camps"></TsOffer>
       </div>
     </div>
   </section>
@@ -36,16 +35,16 @@ const camps = [
 
 <style lang="scss" scoped>
 .offers {
-  padding-block: 40px;
+  padding-block: 80px;
   background-color: var(--color-black) /* rgba(31, 33, 48, 0.541) */;
 
   &__title {
-      grid-column: 1/3;
-      color: var(--color-lime);
-      font-size: 36px;
-      font-family: var(--font-secondary);
-      padding-bottom: 32px;
-      &::after {
+    grid-column: 1/3;
+    color: var(--color-lime);
+    font-size: 40px;
+    font-family: var(--font-secondary);
+    padding-bottom: 32px;
+    &::after {
       content: '';
       background-color: var(--color-iceberg);
       width: 100px;

@@ -4,36 +4,65 @@ import TsNavbar from './shared/TsNavbar.vue'
 
 <template>
   <section class="main">
-    <TsNavbar />
-    <!-- <div class="block"></div> -->
-    <div class="main__hero">
-      <h1 class="main__title">
-        Spend an acitve holiday with Tennis School Oliver
+    <div class="main__content">
+      <TsNavbar />
+      <div class="main__text">
+        <h1 class="main__title">
+        Spend an active holiday with Tennis School Oliver Janković
       </h1>
-      <img src="/images/racket.png" alt="" class="main__img" />
+        <!-- <img src="/images/tennisPlayer.png" alt="" /> -->
+      </div>
     </div>
-    <div class="blocky--right"></div>
+    <div class="main__hero">
+      <img src="/images/background.svg" alt="" />
+    </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .main {
   height: 100vh;
-  display: grid;
+  width: 100%;
   overflow: hidden;
   background-color: var(--color-black);
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding-inline: 100px;
+  padding-top: 40px;
 
   &__hero {
-    display: flex;
-    z-index: 2;
-    padding-inline: 20px;
+    width: 100%;
+    display: grid;
+    justify-items: end;
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    width: 100%;
+    grid-template-rows: min-content auto;
+  }
+
+  &__text {
+    display: grid;
+    align-content: flex-end;
+    position: relative;
+    padding-bottom: 40px;
+
+    & > img {
+      opacity: 0.3;
+      position: absolute;
+      bottom: 0;
+    }
   }
 
   &__title {
     font-family: var(--font-secondary);
     color: var(--color-iceberg);
-    font-size: 68px;
-    align-self: center;
+    font-size: 112px;
+    z-index: 1;
   }
 
   &__img {
@@ -41,26 +70,5 @@ import TsNavbar from './shared/TsNavbar.vue'
     align-self: center;
     height: 70vh;
   }
-}
-.block {
-  background-color: rgba(31, 33, 48, 0.801);
-  width: 60%;
-  height: 100%;
-  border-radius: 5px;
-  transform: skew(35deg);
-  position: absolute;
-  opacity: 0.5;
-  z-index: -1;
-  left: -25%;
-}
-
-.blocky--right {
-  background-color: var(--color-lime);
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  transform: skew(-55deg);
-  position: absolute;
-  left: 65%;
 }
 </style>

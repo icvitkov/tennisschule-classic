@@ -1,8 +1,4 @@
 <script>
-import TsMain from './components/TsMain.vue';
-import Advantages from './components/Advantages.vue';
-import Prices from './components/Prices.vue';
-import Coach from './components/Coach.vue';
 
 
 </script>
@@ -10,6 +6,7 @@ import Coach from './components/Coach.vue';
 <template>
      <ts-main />
      <Advantages />
-     <Prices />
+     <Offer />
+     <Services />
      <Coach />
 </template>
