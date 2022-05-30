@@ -19,8 +19,8 @@ html,
 body,
 #__nuxt,
 #__nuxt > div {
-  height: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 /*
   Typographic tweaks!
@@ -32,7 +32,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-primary);
   color: #000;
-  background-color: #eee;
+  background-color: #fff;
 }
 /*
   6. Improve media defaults
