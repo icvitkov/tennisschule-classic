@@ -28,17 +28,6 @@ defineProps({
     font-size: 20px;
     font-family: var(--font-secondary);
     padding-bottom: 28px;
-
-    &::after {
-      content: '';
-      background-color: var(--color-lime);
-      width: 100px;
-      height: 3px;
-      border-radius: 5px;
-      margin-top: 30px;
-      margin-left: -85px;
-      position: absolute;
-    }
   }
 
   &__item {

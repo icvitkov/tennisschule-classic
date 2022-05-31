@@ -22,7 +22,7 @@ const camps = [
           :offer="sessions"
         >
           <template #additionalInfo>
-            Price includes: 50 min of training, tennis balls, tennis court, Head
+            Price includes: 60 min of training, tennis balls, tennis court, Head
             racquet (children reacquets also available)
           </template>
         </TsOffer>
@@ -44,16 +44,6 @@ const camps = [
     font-size: 40px;
     font-family: var(--font-secondary);
     padding-bottom: 32px;
-    &::after {
-      content: '';
-      background-color: var(--color-iceberg);
-      width: 100px;
-      height: 3px;
-      border-radius: 5px;
-      margin-top: 50px;
-      margin-left: -90px;
-      position: absolute;
-    }
   }
   &__container {
     grid-column: 1/-1;

@@ -56,16 +56,5 @@ defineProps({
   font-size: 32px;
   font-family: var(--font-secondary);
   padding-bottom: 28px;
-
-  &::after {
-    content: '';
-    background-color: var(--color-lime);
-    width: 150px;
-    height: 3px;
-    border-radius: 5px;
-    margin-top: 45px;
-    margin-left: -140px;
-    position: absolute;
-  }
 }
 </style>
