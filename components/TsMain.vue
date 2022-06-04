@@ -6,9 +6,9 @@ import TsNavbar from './shared/TsNavbar.vue'
   <section class="main">
     <div class="main__content">
       <TsNavbar />
-      <div class="main__text">
+      <div class="main__text" itemscope>
         <h1 class="main__title">
-        Spend an active holiday with Tennis School Oliver Janković
+        Spend an active holiday with Tennis School Oliver Janković in Bol on the island of Brač
       </h1>
         <!-- <img src="/images/tennisPlayer.png" alt="" /> -->
       </div>
