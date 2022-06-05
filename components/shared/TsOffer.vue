@@ -24,8 +24,11 @@ defineProps({
   padding: 20px;
   height: 100%;
   box-shadow: 20px 20px 0px 0px var(--color-lime);
+  @include mq('tablet') {
+    width: calc(100% - 20px)
+  }
   &__title {
-    font-size: 20px;
+    font-size: 22px;
     font-family: var(--font-secondary);
     padding-bottom: 28px;
   }
@@ -34,6 +37,7 @@ defineProps({
     display: flex;
     justify-content: space-between;
     padding-block: 12px;
+    font-size: 20px;
   }
 
   &__price {

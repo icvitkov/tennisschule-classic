@@ -3,26 +3,26 @@ import TennisBall from '@/public/images/tennis-ball.svg'
 import Racket from '@/public/images/racket.svg'
 import HeadBand from '@/public/images/head.svg'
 import Court from '@/public/images/tennis-court.svg'
-
 </script>
 
 <template>
   <section class="services">
     <div class="grid">
-      <h2 class="services__title">{{$t("Our services for you")}}</h2>
+      <h2 class="services__title">{{ $t('Our services for you') }}</h2>
       <div class="services__container">
         <TsService
           :title="$t('Head Tour balls')"
-          :additional-info="($t('4 pieces'))"
-          price="10.00 €">
+          :additional-info="$t('4 pieces')"
+          price="10.00 €"
+        >
           <template #svg>
             <HeadBand class="icon" />
           </template>
-          </TsService>
+        </TsService>
         <TsService :title="$t('Racquet rental per hour')" price="4.00 €">
-            <template #svg>
-                <Racket class="icon"/>
-            </template>
+          <template #svg>
+            <Racket class="icon" />
+          </template>
         </TsService>
         <TsService :title="$t('Ball rental per hour')" price="2.00 €">
           <template #svg>
@@ -56,11 +56,19 @@ import Court from '@/public/images/tennis-court.svg'
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 64px;
+
+    @include mq('tablet-lg') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mq('mobile') {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
 .icon {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 </style>

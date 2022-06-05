@@ -7,4 +7,5 @@
   <Offer />
   <Services />
   <Coach />
+  <Contact />
 </template>

@@ -11,16 +11,16 @@ const changeLang = (e) => {
   <nav class="nav">
     <div class="nav__company">
       <img src="/images/logoTSduo.svg" alt="" class="nav__logo" />
-      <div>
+      <div class="nav__name">
         <div>Tennisschule</div>
         <div>Oliver Jankovic</div>
       </div>
     </div>
     <div class="nav__items">
-      <a href="#info" class="link">more info</a>
-      <a href="#offer" class="link">offer</a>
-      <a href="#coach" class="link">coach</a>
-      <a href="#contact" class="link">contact</a>
+      <a href="#info" class="link">{{ $t('more info') }}</a>
+      <a href="#offer" class="link">{{ $t('offer') }}</a>
+      <a href="#coach" class="link">{{ $t('coaches') }}</a>
+      <a href="#contact" class="link">{{ $t('contact') }}</a>
     </div>
     <div class="nav__langs">
       <span
@@ -40,15 +40,29 @@ const changeLang = (e) => {
 <style scoped lang="scss">
 .nav {
   display: grid;
-  grid-template-columns: 400px auto 300px;
+  grid-template-columns: 300px auto 300px;
   width: 100%;
   height: max-content;
   color: var(--color-iceberg);
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 36px;
+  line-height: 38px;
   height: max-content;
-  font-size: 24px;
   align-items: center;
+
+  @include mq('tablet-lg') {
+    font-size: 24px;
+    padding-block: 10px 20px;
+  }
+
+  @include mq('tablet') {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include mq('mobile') {
+    font-size: 18px;
+    line-height: 20px;
+  }
 
   &__company {
     display: grid;
@@ -57,9 +71,19 @@ const changeLang = (e) => {
     gap: 20px;
   }
 
+  &__name {
+    @include mq('tablet') {
+      display: none;
+    }
+  }
+
   &__logo {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+
+    @include mq('tablet-lg') {
+      display: none;
+    }
   }
 
   &__items {
@@ -67,6 +91,10 @@ const changeLang = (e) => {
     width: 100%;
     justify-content: center;
     gap: 80px;
+
+    @include mq('tablet') {
+      display: none;
+    }
   }
 
   &__langs {

@@ -2,7 +2,7 @@
 
 <template>
   <section class="coach" id="coach">
-    <div class="grid">
+    <div class="grid grid--mobile">
       <div class="coach__description">
         <h2 class="coach__title">{{ $t('Coach') }} Oliver</h2>
         <p>
@@ -38,7 +38,7 @@
     </div>
   </section>
 
-  <section class="coach">
+  <section class="coach coach--left">
     <div class="grid">
       <img
         src="/images/coach2.png"
@@ -70,12 +70,19 @@
 <style lang="scss" scoped>
 .coach {
   padding-block: 80px;
+  &--left {
+    background-color: var(--color-iceberg);
+  }
   &__title {
     grid-column: 1/7;
     color: var(--color-black);
     font-size: 40px;
     font-family: var(--font-secondary);
     padding-bottom: 32px;
+
+    @include mq('tablet-lg') {
+      grid-column: 1/-1;
+    }
   }
   &__img {
     border-radius: 50%;
@@ -84,23 +91,60 @@
     object-fit: cover;
     background-color: var(--color-iceberg);
     grid-column: 8/13;
+    @include mq('tablet-lg') {
+      display: flex;
+      grid-column: 1/-1;
+      justify-self: center;
+      margin-bottom: 40px;
+    }
+
+
+  @include mq('mobile') {
+    height: 90vw;
+    width: auto;
+  }
 
     &--left {
       grid-column: 1/6;
-      background-color: var(--color-lime);
+      background-color: var(--color-white);
+
+      @include mq('tablet-lg') {
+        grid-column: 1/-1;
+      }
     }
   }
 
   &__description {
     grid-column: 1/7;
     font-size: 18px;
+    @include mq('tablet-lg') {
+      grid-column: 1/-1;
+    }
 
     &--left {
       grid-column: 7/13;
+      @include mq('tablet-lg') {
+        grid-column: 1/-1;
+      }
     }
 
     > p {
       padding-bottom: 20px;
+    }
+  }
+}
+
+.grid--mobile {
+  @include mq('tablet-lg') {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-inline: 20px;
+    width: 100%;
+
+    &--left {
+      flex-direction: column;
     }
   }
 }
