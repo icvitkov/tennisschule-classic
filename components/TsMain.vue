@@ -18,7 +18,7 @@ import Hero from '@/public/images/background.svg'
 
 <style lang="scss" scoped>
 .main {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   background-color: var(--color-black);
   display: grid;
@@ -71,7 +71,6 @@ import Hero from '@/public/images/background.svg'
 
     @include mq('tablet') {
       height: auto;
-      max-height: 80vh;
     }
   }
 }
