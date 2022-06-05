@@ -50,7 +50,7 @@ import Hero from '@/public/images/background.svg'
 
     @include mq('mobile') {
       width: 100%;
-      align-content: center;
+      padding-bottom: 60px;
     }
   }
 
