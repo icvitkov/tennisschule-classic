@@ -71,6 +71,7 @@ import Hero from '@/public/images/background.svg'
 
     @include mq('tablet') {
       height: auto;
+      max-height: 80vh;
     }
   }
 }
