@@ -8,7 +8,7 @@
       <div class="main__hero">
         <img src="/images/background.svg" alt="" />
       </div>
-      <div class="main__text">
+      <div class="main__text" itemscope>
         <h1 class="main__title">
           {{$t("Spend an active holiday with Tennisschule Oliver Jankovic")}}
         </h1>
