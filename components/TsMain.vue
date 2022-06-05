@@ -18,7 +18,7 @@ import Hero from '@/public/images/background.svg'
 
 <style lang="scss" scoped>
 .main {
-  height: 100dvh;
+  height: 100vh;
   width: 100%;
   background-color: var(--color-black);
   display: grid;
@@ -33,6 +33,7 @@ import Hero from '@/public/images/background.svg'
   @include mq('mobile') {
     padding-inline: 10px;
     padding-block: 5px;
+    height: 100;
   }
   &__content {
     display: grid;
