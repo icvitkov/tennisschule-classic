@@ -8,7 +8,7 @@ defineProps({
 <template>
   <div class="card">
     <div class="grid">
-      <div class="container"><img :src="img" alt="" class="img" /></div>
+      <img :src="img" alt="" class="img" />
       <div class="description">
         <h2 class="title">{{ title }}</h2>
         <slot name="description"></slot>
@@ -23,12 +23,18 @@ defineProps({
 }
 
 .img {
-  height: 100%;
+  height: 450px;
   width: 100%;
   object-fit: cover;
   position: relative;
-  left: 30px;
-  top: 30px;
+  grid-column: 1/5;
+  box-shadow: 20px 20px 0px 0px var(--color-lime);
+  @include mq('tablet') {
+    height: 400px;
+    grid-column: 1/-1;
+    width: calc(100% - 20px);
+  }
+
   /* filter: grayscale(1);
   transition: all ease 0.3s;
 
@@ -37,19 +43,13 @@ defineProps({
   } */
 }
 
-.container {
-  height: 400px;
-  width: 100%;
-  background: var(--color-lime);
-  grid-column: 1/5;
-
-  :hover {
-    filter: none;
-  }
-}
-
 .description {
   grid-column: 6/12;
+  font-size: 18px;
+  @include mq('tablet') {
+    grid-column: 1/-1;
+    padding-top: 40px;
+  }
 }
 
 .title {
