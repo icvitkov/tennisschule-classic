@@ -1,9 +1,6 @@
 <script setup>
-import TennisBall from '@/public/images/tennis-ball.svg'
-import Racket from '@/public/images/racket.svg'
-import HeadBand from '@/public/images/head.svg'
-import Court from '@/public/images/tennis-court.svg'
-
+import TennisBall from '@/assets/svgs/tennis-ball.svg'
+import Racket from '@/assets/svgs/racket.svg'
 </script>
 
 <template>
@@ -16,7 +13,7 @@ import Court from '@/public/images/tennis-court.svg'
           :additional-info="($t('4 pieces'))"
           price="10.00 €">
           <template #svg>
-            <HeadBand class="icon" />
+            <!-- <HeadBand class="icon" /> -->
           </template>
           </TsService>
         <TsService :title="$t('Racquet rental per hour')" price="4.00 €">
@@ -31,7 +28,7 @@ import Court from '@/public/images/tennis-court.svg'
         </TsService>
         <TsService :title="$t('Court rental per hour')" price="12.00 €">
           <template #svg>
-            <Court class="icon" />
+            <!-- <Court class="icon" /> -->
           </template>
         </TsService>
       </div>
