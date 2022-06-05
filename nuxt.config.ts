@@ -9,6 +9,7 @@ declare module '@nuxt/schema' {
     intlify?: IntlifyModuleOptions
   }
 }
+import { resolve } from 'path'
 
 const ldjson = {
   "@context:": "http://schema.org",
