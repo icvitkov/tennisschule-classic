@@ -1,5 +1,5 @@
 <script setup>
-import Hero from '@/public/images/background.svg'
+import Hero from '@/assets/svgs/background.svg'
 </script>
 
 <template>
@@ -48,9 +48,9 @@ import Hero from '@/public/images/background.svg'
     height: 100%;
     align-content: flex-end;
 
-    @include mq('mobile') {
+    @include mq('tablet') {
       width: 100%;
-      padding-bottom: 60px;
+      padding-bottom: 10vh;
     }
   }
 
@@ -68,10 +68,11 @@ import Hero from '@/public/images/background.svg'
   &__img {
     height: 70%;
     width: auto;
+    max-width: 90vw;
     justify-self: flex-end;
     position: absolute;
 
-    @include mq('tablet') {
+    @include mq('tablet-lg') {
       height: auto;
     }
   }

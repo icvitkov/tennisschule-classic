@@ -1,10 +1,20 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { usePreferredLanguages } from '@vueuse/core'
+import Hamburger from '@/assets/svgs/hamburger.svg'
 const { locale, availableLocales } = useI18n()
 
 const changeLang = (e) => {
   locale.value = e.target.textContent
+}
+
+const show = ref(false)
+const toggleMenu = () => {
+  show.value = !show.value
+  document.getElementsByTagName('body')[0].classList.toggle('scroll--disabled')
+  /* if (show.value) {
+    document.getElementsByTagName('body')[0].classList.add('scroll--disabled')
+  } */
 }
 </script>
 <template>
@@ -22,6 +32,7 @@ const changeLang = (e) => {
       <a href="#coach" class="link">{{ $t('coaches') }}</a>
       <a href="#contact" class="link">{{ $t('contact') }}</a>
     </div>
+    <Hamburger class="nav__hamburger" @click="toggleMenu" />
     <div class="nav__langs">
       <span
         v-for="(lang, index) in availableLocales"
@@ -36,11 +47,32 @@ const changeLang = (e) => {
       </span>
     </div>
   </nav>
+  <Teleport to="body">
+    <Transition>
+      <div v-if="show" class="modal">
+        <div class="modal__close" @click="toggleMenu">×</div>
+        <div class="modal__nav">
+          <a href="#info" class="link" @click="toggleMenu">{{
+            $t('more info')
+          }}</a>
+          <a href="#offer" class="link" @click="toggleMenu">{{
+            $t('offer')
+          }}</a>
+          <a href="#coach" class="link" @click="toggleMenu">{{
+            $t('coaches')
+          }}</a>
+          <a href="#contact" class="link" @click="toggleMenu">{{
+            $t('contact')
+          }}</a>
+        </div>
+      </div>
+    </Transition>
+  </Teleport>
 </template>
 <style scoped lang="scss">
 .nav {
   display: grid;
-  grid-template-columns: 300px auto 300px;
+  grid-template-columns: 400px auto 300px;
   width: 100%;
   height: max-content;
   color: var(--color-iceberg);
@@ -52,10 +84,8 @@ const changeLang = (e) => {
   @include mq('tablet-lg') {
     font-size: 24px;
     padding-block: 10px 20px;
-  }
-
-  @include mq('tablet') {
     display: flex;
+    grid-template-columns: unset;
     justify-content: space-between;
   }
 
@@ -64,15 +94,23 @@ const changeLang = (e) => {
     line-height: 20px;
   }
 
+  &__hamburger {
+    display: none;
+    color: var(--color-lime);
+    width: 15%;
+    height: 15%;
+    @include mq('tablet-lg') {
+      display: flex;
+    }
+  }
+
   &__company {
     display: grid;
     grid-template-columns: max-content auto;
     align-items: center;
     gap: 20px;
-  }
 
-  &__name {
-    @include mq('tablet') {
+    @include mq('tablet-lg') {
       display: none;
     }
   }
@@ -80,19 +118,15 @@ const changeLang = (e) => {
   &__logo {
     width: 120px;
     height: 120px;
-
-    @include mq('tablet-lg') {
-      display: none;
-    }
   }
 
   &__items {
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 80px;
+    gap: 60px;
 
-    @include mq('tablet') {
+    @include mq('tablet-lg') {
       display: none;
     }
   }
@@ -134,5 +168,41 @@ const changeLang = (e) => {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-iceberg);
+  position: absolute;
+  z-index: 3;
+  padding: 2% 6%;
+  overflow: hidden;
+
+  &__close {
+    display: grid;
+    font-size: 9vh;
+    justify-content: end;
+    padding-bottom: 2%;
+    cursor: pointer;
+  }
+
+  &__nav {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    font-size: 3vh;
+  }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.4s linear;
+}
+
+.v-enter,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

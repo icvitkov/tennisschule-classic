@@ -1,5 +1,5 @@
 <script setup>
-import TsOffer from './shared/TsOffer.vue';
+import TsOffer from './shared/TsOffer.vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 const sessions = computed(() => [
@@ -15,8 +15,8 @@ const sessions = computed(() => [
 
 const camps = computed(() => [
   {
-    name: `5 × 60min 3-4 ${t('group')}`,
-    price: `70 € / 525 kn ${t('per person')}`,
+    name: `5 × 60 min`,
+    price: `70 € / 525 kn`,
   },
 ])
 </script>
@@ -28,13 +28,23 @@ const camps = computed(() => [
       <div class="offers__container">
         <TsOffer :title="$t('Training')" :offer="sessions">
           <template #additionalInfo>
-            {{t('Price includes: 60 min of training, tennis balls, tennis court, Head racquet (children reacquets also available)')}}
+            {{
+              t(
+                'Price includes: 60 min of training, tennis balls, tennis court, Head racquet (children reacquets also available)'
+              )
+            }}
           </template>
         </TsOffer>
         <TsOffer
           :title="$t('Tennis summer camps for kids and youngsters')"
           :offer="camps"
-        ></TsOffer>
+        >
+          <template #additionalInfo>
+            {{ t('Price per person') }}
+            <br />
+            {{ t('3-4 people in a group') }}
+          </template>
+        </TsOffer>
       </div>
     </div>
   </section>
@@ -60,8 +70,8 @@ const camps = computed(() => [
     gap: 64px;
 
     @include mq('tablet-lg') {
-    grid-template-columns: repeat(2, 1fr);
-  }
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @include mq('tablet') {
       grid-template-columns: 1fr;

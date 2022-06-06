@@ -2,7 +2,7 @@
 
 <template>
   <section class="coach" id="coach">
-    <div class="grid grid--mobile">
+    <div class="grid grid__mobile">
       <div class="coach__description">
         <h2 class="coach__title">{{ $t('Coach') }} Oliver</h2>
         <p>
@@ -39,7 +39,7 @@
   </section>
 
   <section class="coach coach--left">
-    <div class="grid">
+    <div class="grid grid__mobile grid__mobile--left">
       <img
         src="/images/coach2.png"
         alt=""
@@ -96,21 +96,20 @@
       grid-column: 1/-1;
       justify-self: center;
       margin-bottom: 40px;
+      align-self: center;
     }
 
 
-  @include mq('mobile') {
+  @include mq('tablet') {
     height: 90vw;
     width: auto;
   }
 
     &--left {
       grid-column: 1/6;
+      display: flex;
+      justify-self: center;
       background-color: var(--color-white);
-
-      @include mq('tablet-lg') {
-        grid-column: 1/-1;
-      }
     }
   }
 
@@ -118,14 +117,15 @@
     grid-column: 1/7;
     font-size: 18px;
     @include mq('tablet-lg') {
-      grid-column: 1/-1;
+      padding-left: 10%;
+    }
+
+    @include mq('tablet') {
+      padding-left: 0;
     }
 
     &--left {
       grid-column: 7/13;
-      @include mq('tablet-lg') {
-        grid-column: 1/-1;
-      }
     }
 
     > p {
@@ -134,12 +134,11 @@
   }
 }
 
-.grid--mobile {
+.grid__mobile {
   @include mq('tablet-lg') {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column-reverse;
-    align-items: center;
     padding-inline: 20px;
     width: 100%;
 
