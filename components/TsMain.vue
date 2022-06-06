@@ -50,7 +50,7 @@ import Hero from '@/assets/svgs/background.svg'
 
     @include mq('tablet') {
       width: 100%;
-      padding-bottom: 10vh;
+      padding-bottom: 15vh;
     }
   }
 

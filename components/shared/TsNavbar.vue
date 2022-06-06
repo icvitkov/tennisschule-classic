@@ -50,7 +50,10 @@ const toggleMenu = () => {
   <Teleport to="body">
     <Transition>
       <div v-if="show" class="modal">
-        <div class="modal__close" @click="toggleMenu">×</div>
+        <div class="modal__header" @click="toggleMenu">
+          <img src="/images/logoTSduo.svg" alt="" />
+          <div class="modal__icon">×</div>
+        </div>
         <div class="modal__nav">
           <a href="#info" class="link" @click="toggleMenu">{{
             $t('more info')
@@ -173,18 +176,27 @@ a {
 .modal {
   width: 100%;
   height: 100vh;
-  background-color: var(--color-iceberg);
+  background-color: var(--color-black);
+  color: var(--color-iceberg);
   position: absolute;
   z-index: 3;
   padding: 2% 6%;
-  overflow: hidden;
 
-  &__close {
-    display: grid;
-    font-size: 9vh;
-    justify-content: end;
-    padding-bottom: 2%;
+  &__header {
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
     cursor: pointer;
+
+    & > img {
+      width: 50px;
+    }
+  }
+
+  &__icon {
+    font-size: 9vh;
   }
 
   &__nav {
@@ -192,7 +204,7 @@ a {
     width: 100%;
     justify-content: center;
     gap: 20px;
-    font-size: 3vh;
+    font-size: 4vh;
   }
 }
 
