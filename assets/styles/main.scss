@@ -13,6 +13,10 @@
   opacity: 0;
 }
 
+.scroll--disabled {
+  overflow: hidden;
+}
+
 .grid {
   max-width: 1526px;
   display: grid;
