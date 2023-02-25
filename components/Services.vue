@@ -25,11 +25,7 @@ import Court from '@/assets/svgs/tennis-court.svg'
             <TennisBall class="icon" />
           </template>
         </TsService>
-        <TsService
-          :title="$t('Head Tour balls')"
-          :additional-info="$t('4 pieces')"
-          price="10.00 €"
-        >
+        <TsService :title="$t('Head Tour balls')" :additional-info="$t('3 pieces')" price="10.00 €">
           <template #svg>
             <HeadBand class="icon" />
           </template>
@@ -42,7 +38,9 @@ import Court from '@/assets/svgs/tennis-court.svg'
 <style lang="scss" scoped>
 .services {
   padding-block: 60px;
-  background-color: var(--color-iceberg) /* rgba(31, 33, 48, 0.541) */;
+  background-color: var(--color-iceberg)
+    /* rgba(31, 33, 48, 0.541) */
+  ;
 
   &__title {
     grid-column: 1/-1;
@@ -51,6 +49,7 @@ import Court from '@/assets/svgs/tennis-court.svg'
     font-family: var(--font-secondary);
     padding-bottom: 32px;
   }
+
   &__container {
     grid-column: 1/-1;
     display: grid;
