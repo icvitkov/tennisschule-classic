@@ -3,7 +3,7 @@ import TsOffer from './shared/TsOffer.vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 const sessions = computed(() => [
-  { name: `${t('single session')}`, price: '50 €' },
+  { name: `${t('single session')}`, price: '45 €' },
   { name: `${t('double session')}`, price: '50 €' },
 ])
 
@@ -30,13 +30,15 @@ const camps = computed(() => [
           <template #additionalInfo>
             {{
               t(
-                'Price includes: 60 min of training, tennis balls, tennis court, Head racquet (children reacquets also
-                        available)'
-                        )
+                'Price includes: 60 min of training, tennis balls, tennis court, Head racquet (children reacquets also available)'
+              )
             }}
           </template>
         </TsOffer>
-        <TsOffer :title="$t('Tennis summer camps for kids and youngsters')" :offer="camps">
+        <TsOffer
+          :title="$t('Tennis summer camps for kids and youngsters')"
+          :offer="camps"
+        >
           <template #additionalInfo>
             {{ t('Price per person') }}
             <br />
@@ -52,9 +54,7 @@ const camps = computed(() => [
 .offers {
   max-width: 100%;
   padding-block: 80px;
-  background-color: var(--color-black)
-    /* rgba(31, 33, 48, 0.541) */
-  ;
+  background-color: var(--color-black) /* rgba(31, 33, 48, 0.541) */;
 
   &__title {
     grid-column: 1/-1;
