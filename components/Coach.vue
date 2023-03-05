@@ -34,7 +34,7 @@
           }}
         </p>
       </div>
-      <img src="/images/couch.png" alt="" class="coach__img" />
+      <img src="/images/couch.png" alt="First coach photo" class="coach__img" />
     </div>
   </section>
 
@@ -42,7 +42,7 @@
     <div class="grid grid__mobile grid__mobile--left">
       <img
         src="/images/coach2.png"
-        alt=""
+        alt="Second coach photo"
         class="coach__img coach__img--left"
       />
 
