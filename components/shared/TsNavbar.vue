@@ -20,7 +20,11 @@ const toggleMenu = () => {
 <template>
   <nav class="nav">
     <div class="nav__company">
-      <img src="/images/logoTSduo.svg" alt="Tennisschule Logo" class="nav__logo" />
+      <img
+        src="/images/logoTSduo.svg"
+        alt="Tennisschule Logo"
+        class="nav__logo"
+      />
       <div class="nav__name">
         <div>Tennisschule</div>
         <div>Oliver Jankovic</div>
@@ -51,7 +55,6 @@ const toggleMenu = () => {
     <Transition>
       <div v-if="show" class="modal">
         <div class="modal__header" @click="toggleMenu">
-          <img src="/images/logoTSduo.svg" alt="Tennisschule logo" />
           <div class="modal__icon">×</div>
         </div>
         <div class="modal__nav">
@@ -83,6 +86,7 @@ const toggleMenu = () => {
   line-height: 38px;
   height: max-content;
   align-items: center;
+  z-index: 2;
 
   @include mq('tablet-lg') {
     font-size: 24px;
@@ -100,6 +104,7 @@ const toggleMenu = () => {
   &__hamburger {
     display: none;
     color: var(--color-lime);
+    cursor: pointer;
     @include mq('tablet-lg') {
       display: flex;
       width: 55px;
@@ -115,11 +120,6 @@ const toggleMenu = () => {
     @include mq('tablet-lg') {
       display: none;
     }
-  }
-
-  &__logo {
-    width: 120px;
-    height: 120px;
   }
 
   &__items {
@@ -162,6 +162,7 @@ const toggleMenu = () => {
 .link {
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
+  z-index: 2;
 }
 .link:hover {
   box-shadow: 0px 3px 0px 0px var(--color-lime);
@@ -181,6 +182,18 @@ a {
   z-index: 3;
   padding: 2% 6%;
 
+  &:before {
+    content: '';
+    top: -10rem;
+    left: -10rem;
+    width: calc(100% + 20rem);
+    height: calc(100% + 20rem);
+    z-index: 1;
+    position: fixed;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+    opacity: 0.15;
+  }
+
   &__header {
     display: flex;
     font-size: 18px;
@@ -196,6 +209,8 @@ a {
 
   &__icon {
     font-size: 9vh;
+    z-index: 2;
+    color: var(--color-lime);
   }
 
   &__nav {

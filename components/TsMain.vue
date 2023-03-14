@@ -30,7 +30,7 @@ import Court from '@/assets/svgs/court.svg'
     left: -10rem;
     width: calc(100% + 20rem);
     height: calc(100% + 20rem);
-    z-index: 9999;
+    z-index: 1;
     position: fixed;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
     opacity: 0.15;
@@ -74,8 +74,9 @@ import Court from '@/assets/svgs/court.svg'
 .hero {
   width: 100%;
   height: 100%;
-  background-image: url('public/images/girlsTennis.jpg');
+  background-image: url('public/images/background.jpg');
   background-size: cover;
+  background-position: bottom;
 
   @include mq('tablet-lg') {
     background-position-x: center;

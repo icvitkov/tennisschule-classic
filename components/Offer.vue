@@ -3,8 +3,8 @@ import TsOffer from './shared/TsOffer.vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 const sessions = computed(() => [
-  { name: `${t('single session')}`, price: '45 €' },
-  { name: `${t('double session')}`, price: '50 €' },
+  { name: `${t('single session')}`, price: '50 €' },
+  { name: `${t('double session')}`, price: '56 €' },
 ])
 
 /* const camps = [
