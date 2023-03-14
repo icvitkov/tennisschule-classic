@@ -86,6 +86,7 @@ const toggleMenu = () => {
   line-height: 38px;
   height: max-content;
   align-items: center;
+  padding-top: 10px;
   z-index: 2;
 
   @include mq('tablet-lg') {
@@ -120,6 +121,11 @@ const toggleMenu = () => {
     @include mq('tablet-lg') {
       display: none;
     }
+  }
+
+  &__logo {
+    width: 120px;
+    height: 120px;
   }
 
   &__items {

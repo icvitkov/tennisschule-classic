@@ -3,10 +3,19 @@
 <template>
   <section class="contact" id="contact">
     <div class="grid">
-      <div class="contact__title">{{$t('Contact')}}</div>
+      <div class="contact__title">{{ $t('Contact') }}</div>
       <div class="contact__info">
-        <p>email: <a href="mailto:oliverjankovictk@gmail.com">oliverjankovictk@gmail.com</a></p>
+        <p>
+          email:
+          <a href="mailto:oliverjankovictk@gmail.com"
+            >oliverjankovictk@gmail.com</a
+          >
+        </p>
         <p>mobile: <a href="tel:+385959021622">+385959021622</a></p>
+      </div>
+      <div class="contact__info">
+        Tennisschule Oliver Jankovic |
+        {{ $t('Tennis in Bol, Brač') }}
       </div>
     </div>
   </section>
@@ -24,7 +33,7 @@
     font-size: 40px;
     font-family: var(--font-secondary);
 
-    @include mq ('tablet') {
+    @include mq('tablet') {
       grid-column: 1/-1;
     }
   }
@@ -34,7 +43,7 @@
     align-self: center;
     font-size: 18px;
 
-    @include mq ('tablet') {
+    @include mq('tablet') {
       grid-column: 1/-1;
     }
 

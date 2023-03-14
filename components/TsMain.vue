@@ -1,6 +1,4 @@
-<script setup>
-import Court from '@/assets/svgs/court.svg'
-</script>
+<script setup></script>
 
 <template>
   <section class="main">
@@ -8,8 +6,9 @@ import Court from '@/assets/svgs/court.svg'
     <div class="main__wrapper">
       <div class="main__title">
         <h1 itemscope>
-          {{ $t('Spend an active holiday with Tennisschule Oliver Jankovic') }}
+          {{ $t('Tennis in Bol, Brač') }}
         </h1>
+        <h2>Tennisschule Oliver Jankovic</h2>
       </div>
       <div class="hero"></div>
     </div>
@@ -48,7 +47,6 @@ import Court from '@/assets/svgs/court.svg'
 
 .main__title {
   width: 100%;
-  font-size: 50px;
   color: var(--color-lime);
   align-self: flex-end;
   font-weight: 400;
@@ -56,15 +54,28 @@ import Court from '@/assets/svgs/court.svg'
   position: relative;
 
   @include mq('tablet-lg') {
-    font-size: 32px;
     padding-inline: 10px;
   }
 
   & > h1 {
     margin-right: -100px;
     margin-left: 100px;
+    font-size: 80px;
 
     @include mq('tablet-lg') {
+      font-size: 60px;
+      margin-left: unset;
+      margin-right: -120px;
+    }
+  }
+
+  & > h2 {
+    margin-right: -100px;
+    margin-left: 100px;
+    font-size: 40px;
+
+    @include mq('tablet-lg') {
+      font-size: 30px;
       margin-left: unset;
       margin-right: -120px;
     }

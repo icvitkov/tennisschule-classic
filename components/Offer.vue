@@ -30,7 +30,7 @@ const camps = computed(() => [
           <template #additionalInfo>
             {{
               t(
-                'Price includes: 60 min of training, tennis balls, tennis court, Head racquet (children reacquets also available)'
+                'Price includes: 60 min of training, tennis balls, tennis court in Bol, Brač, Head racquet (children reacquets also available)'
               )
             }}
           </template>

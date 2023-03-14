@@ -5,7 +5,9 @@ import TsAdvantages from './shared/TsAdvantages.vue'
 <template>
   <div class="advantages" id="info">
     <TsAdvantages
-      :title="$t('Tennis at the Bretanide Sport & Wellness Resort')"
+      :title="
+        $t('Tennis at the Bretanide Sport & Wellness Resort in Bol, Brač')
+      "
       img="/images/court.jpg"
       class="advantages__item"
     >

@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   buildModules: ['@vueuse/nuxt', '@intlify/nuxt3'],
   app: {
     head: {
-      title: 'Tennisschule Oliver Jankovic',
+      title: 'Tennis in Bol, Brač | Tennisschule Oliver Jankovic',
       htmlAttrs: {
         dir: 'ltr',
       },
