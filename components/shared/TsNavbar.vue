@@ -100,10 +100,9 @@ const toggleMenu = () => {
   &__hamburger {
     display: none;
     color: var(--color-lime);
-    width: 15%;
-    height: 15%;
     @include mq('tablet-lg') {
       display: flex;
+      width: 55px;
     }
   }
 

@@ -1,80 +1,84 @@
 <script setup>
-import Hero from '@/assets/svgs/background.svg'
+import Court from '@/assets/svgs/court.svg'
 </script>
 
 <template>
   <section class="main">
     <TsNavbar class="main__nav" />
-    <div class="main__content">
-      <Hero class="main__img" />
-      <div class="main__text" itemscope>
-        <h1 class="main__title">
+    <div class="main__wrapper">
+      <div class="main__title">
+        <h1 itemscope>
           {{ $t('Spend an active holiday with Tennisschule Oliver Jankovic') }}
         </h1>
       </div>
+      <div class="hero"></div>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .main {
-  height: 100vh;
-  width: 100%;
-  background-color: var(--color-black);
   display: grid;
-  grid-template-rows: min-content auto;
-  padding-inline: 100px;
-  padding-top: 40px;
-  @include mq('tablet') {
-    padding-inline: 20px;
-    padding-bottom: 20px;
+  grid-template-rows: max-content auto;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-gray);
+
+  &:before {
+    content: '';
+    top: -10rem;
+    left: -10rem;
+    width: calc(100% + 20rem);
+    height: calc(100% + 20rem);
+    z-index: 9999;
+    position: fixed;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+    opacity: 0.15;
   }
 
-  @include mq('mobile') {
-    padding-inline: 10px;
-    padding-block: 5px;
-    height: 100;
-  }
-  &__content {
+  &__wrapper {
     display: grid;
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-  &__text {
-    display: grid;
-    width: 60%;
-    height: 100%;
-    align-content: flex-end;
-
-    @include mq('tablet') {
-      width: 100%;
-      padding-bottom: 15vh;
-    }
-  }
-
-  &__title {
-    font-family: var(--font-secondary);
-    color: var(--color-iceberg);
-    font-size: 4vw;
-    z-index: 1;
-
-    @include mq('mobile') {
-      font-size: 24px;
-    }
-  }
-
-  &__img {
-    height: 70%;
-    width: auto;
-    max-width: 90vw;
-    justify-self: flex-end;
-    position: absolute;
+    grid-template-columns: 40% 60%;
 
     @include mq('tablet-lg') {
-      height: auto;
+      grid-template-columns: 30% 70%;
     }
+  }
+}
+
+.main__title {
+  width: 100%;
+  font-size: 50px;
+  color: var(--color-lime);
+  align-self: flex-end;
+  font-weight: 400;
+  font-family: var(--font-secondary);
+  position: relative;
+
+  @include mq('tablet-lg') {
+    font-size: 32px;
+    padding-inline: 10px;
+  }
+
+  & > h1 {
+    margin-right: -100px;
+    margin-left: 100px;
+
+    @include mq('tablet-lg') {
+      margin-left: unset;
+      margin-right: -120px;
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  background-image: url('images/girlsTennis.jpg');
+  background-size: cover;
+
+  @include mq('tablet-lg') {
+    background-position-x: center;
   }
 }
 </style>
