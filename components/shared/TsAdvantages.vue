@@ -8,7 +8,7 @@ defineProps({
 <template>
   <div class="card">
     <div class="grid">
-      <img :src="img" alt="" class="img" />
+      <img :src="img" :alt="title" class="img" />
       <div class="description">
         <h2 class="title">{{ title }}</h2>
         <slot name="description"></slot>

@@ -20,7 +20,7 @@ const toggleMenu = () => {
 <template>
   <nav class="nav">
     <div class="nav__company">
-      <img src="/images/logoTSduo.svg" alt="" class="nav__logo" />
+      <img src="/images/logoTSduo.svg" alt="Tennisschule Logo" class="nav__logo" />
       <div class="nav__name">
         <div>Tennisschule</div>
         <div>Oliver Jankovic</div>
@@ -51,7 +51,7 @@ const toggleMenu = () => {
     <Transition>
       <div v-if="show" class="modal">
         <div class="modal__header" @click="toggleMenu">
-          <img src="/images/logoTSduo.svg" alt="" />
+          <img src="/images/logoTSduo.svg" alt="Tennisschule logo" />
           <div class="modal__icon">×</div>
         </div>
         <div class="modal__nav">
