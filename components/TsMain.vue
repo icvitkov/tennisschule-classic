@@ -21,7 +21,12 @@
   grid-template-rows: max-content auto;
   width: 100%;
   height: 100vh;
+  padding-left: 15px;
   background-color: var(--color-gray);
+
+  @include mq('tablet-lg') {
+    padding: 5px;
+  }
 
   &:before {
     content: '';
