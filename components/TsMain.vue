@@ -74,7 +74,7 @@ import Court from '@/assets/svgs/court.svg'
 .hero {
   width: 100%;
   height: 100%;
-  background-image: url('./images/girlsTennis.jpg');
+  background-image: url('public/images/girlsTennis.jpg');
   background-size: cover;
 
   @include mq('tablet-lg') {
