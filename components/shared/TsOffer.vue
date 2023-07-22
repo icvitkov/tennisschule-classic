@@ -11,7 +11,7 @@ defineProps({
       <h3 class="offer__title">{{ title }}</h3>
       <div v-for="item in offer" :key="item" class="offer__item">
         <span class="offer__name">{{ item.name }}</span>
-        <span class="offer__price">{{ item.price }}</span>
+        <!-- <span class="offer__price">{{ item.price }}</span> -->
       </div>
       <p class="offer__info"><slot name="additionalInfo"></slot></p>
     </div>
