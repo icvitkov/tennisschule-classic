@@ -13,7 +13,7 @@ defineProps({
     </div>
     <h3 class="service__title">{{ title }}</h3>
     <p class="service__info">{{ additionalInfo }}</p>
-    <p class="service__price">{{ price }}</p>
+    <!-- <p class="service__price">{{ price }}</p> -->
   </div>
 </template>
 

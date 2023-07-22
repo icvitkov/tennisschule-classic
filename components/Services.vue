@@ -10,7 +10,7 @@ import Court from '@/assets/svgs/tennis-court.svg'
     <div class="grid">
       <h2 class="services__title">{{ $t('Our services for you') }}</h2>
       <div class="services__container">
-        <TsService :title="$t('Court rental per hour')" price="12.00 €">
+      <TsService :title="$t('Court rental per hour')" price="12.00 €">
           <template #svg>
             <Court class="icon" />
           </template>
@@ -25,11 +25,11 @@ import Court from '@/assets/svgs/tennis-court.svg'
             <TennisBall class="icon" />
           </template>
         </TsService>
-        <TsService :title="$t('Head Tour balls')" :additional-info="$t('3 pieces')" price="10.00 €">
+        <!-- <TsService :title="$t('Head Tour balls')" :additional-info="$t('3 pieces')" price="10.00 €">
           <template #svg>
             <HeadBand class="icon" />
           </template>
-        </TsService>
+        </TsService> -->
       </div>
     </div>
   </section>
@@ -53,7 +53,7 @@ import Court from '@/assets/svgs/tennis-court.svg'
   &__container {
     grid-column: 1/-1;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 64px;
 
     @include mq('tablet-lg') {
