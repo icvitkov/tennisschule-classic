@@ -1,68 +1,104 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <section class="main">
     <TsNavbar class="main__nav" />
-    <div class="main__content">
-      <div class="main__hero">
-        <img src="/images/background.svg" alt="" />
-      </div>
-      <div class="main__text" itemscope>
-        <h1 class="main__title">
-          {{$t("Spend an active holiday with Tennisschule Oliver Jankovic")}}
+    <div class="main__wrapper">
+      <div class="main__title">
+        <h1 itemscope>
+          {{ $t('Tennis in Bol, Brač') }}
         </h1>
+        <h2>Tennisschule Oliver Jankovic</h2>
       </div>
+      <div class="hero"></div>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .main {
-  height: 100vh;
-  width: 100%;
-  background-color: var(--color-black);
   display: grid;
-  grid-template-rows: min-content auto;
-  padding-inline: 100px;
-  padding-top: 40px;
+  grid-template-rows: max-content auto;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-gray);
 
-  &__content {
-    display: grid;
-    width: 100%;
-    grid-template-rows: 80% 20%;
+  @include mq('tablet-lg') {
+    padding-left: 15px;
   }
 
-  &__hero {
-    width: 100%;
-    height: 100%;
+  @include mq('mobile') {
+    padding-left: 5px;
+  }
+
+  &:before {
+    content: '';
+    top: -10rem;
+    left: -10rem;
+    width: calc(100% + 20rem);
+    height: calc(100% + 20rem);
+    z-index: 1;
+    position: fixed;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+    opacity: 0.15;
+  }
+
+  &__wrapper {
     display: grid;
-    align-self: flex-start;
-    justify-items: end;
-    & > img {
-      height: 100%;
+    grid-template-columns: 40% 60%;
+
+    @include mq('tablet-lg') {
+      grid-template-columns: 30% 70%;
+    }
+  }
+}
+
+.main__title {
+  width: 100%;
+  color: var(--color-lime);
+  align-self: flex-end;
+  font-weight: 400;
+  font-family: var(--font-secondary);
+  position: relative;
+
+  @include mq('tablet-lg') {
+    padding-inline: 10px;
+  }
+
+  & > h1 {
+    margin-right: -100px;
+    margin-left: 100px;
+    font-size: 80px;
+
+    @include mq('tablet-lg') {
+      font-size: 60px;
+      margin-left: unset;
+      margin-right: -120px;
     }
   }
 
-  &__text {
-    display: grid;
-    width: 60%;
-    align-content: flex-end;
-    position: relative;
-    padding-bottom: 40px;
-  }
+  & > h2 {
+    margin-right: -100px;
+    margin-left: 100px;
+    font-size: 40px;
 
-  &__title {
-    font-family: var(--font-secondary);
-    color: var(--color-iceberg);
-    font-size: 4vw;
-    z-index: 1;
+    @include mq('tablet-lg') {
+      font-size: 30px;
+      margin-left: unset;
+      margin-right: -120px;
+    }
   }
+}
 
-  &__img {
-    justify-self: center;
-    align-self: center;
-    height: 70vh;
+.hero {
+  width: 100%;
+  height: 100%;
+  background-image: url('public/images/background.jpg');
+  background-size: cover;
+  background-position: bottom;
+
+  @include mq('tablet-lg') {
+    background-position-x: center;
   }
 }
 </style>

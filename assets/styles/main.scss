@@ -13,6 +13,10 @@
   opacity: 0;
 }
 
+.scroll--disabled {
+  overflow: hidden;
+}
+
 .grid {
   max-width: 1526px;
   display: grid;
@@ -21,4 +25,20 @@
   column-gap: 20px;
   margin-inline: auto !important;
   grid-template-rows: min-content;
+
+  @include mq('tablet') {
+    grid-template-columns: repeat(6, 1fr);
+    padding-inline: 20px;
+  }
+
+  @include mq('tablet-lg') {
+    grid-template-columns: repeat(6, 1fr);
+    padding-inline: 40px;
+  }
+
+
+  @include mq('mobile') {
+    grid-template-columns: repeat(4, 1fr);
+    padding-inline: 10px;
+  }
 }

@@ -2,7 +2,7 @@
 
 <template>
   <section class="coach" id="coach">
-    <div class="grid">
+    <div class="grid grid__mobile">
       <div class="coach__description">
         <h2 class="coach__title">{{ $t('Coach') }} Oliver</h2>
         <p>
@@ -34,15 +34,15 @@
           }}
         </p>
       </div>
-      <img src="/images/couch.png" alt="" class="coach__img" />
+      <img src="/images/couch.png" alt="First coach photo" class="coach__img" />
     </div>
   </section>
 
-  <section class="coach">
-    <div class="grid">
+  <section class="coach coach--left">
+    <div class="grid grid__mobile grid__mobile--left">
       <img
         src="/images/coach2.png"
-        alt=""
+        alt="Second coach photo"
         class="coach__img coach__img--left"
       />
 
@@ -70,12 +70,19 @@
 <style lang="scss" scoped>
 .coach {
   padding-block: 80px;
+  &--left {
+    background-color: var(--color-iceberg);
+  }
   &__title {
     grid-column: 1/7;
     color: var(--color-black);
     font-size: 40px;
     font-family: var(--font-secondary);
     padding-bottom: 32px;
+
+    @include mq('tablet-lg') {
+      grid-column: 1/-1;
+    }
   }
   &__img {
     border-radius: 50%;
@@ -84,16 +91,38 @@
     object-fit: cover;
     background-color: var(--color-iceberg);
     grid-column: 8/13;
+    @include mq('tablet-lg') {
+      display: flex;
+      grid-column: 1/-1;
+      justify-self: center;
+      margin-bottom: 40px;
+      align-self: center;
+    }
+
+
+  @include mq('tablet') {
+    height: 90vw;
+    width: auto;
+  }
 
     &--left {
       grid-column: 1/6;
-      background-color: var(--color-lime);
+      display: flex;
+      justify-self: center;
+      background-color: var(--color-white);
     }
   }
 
   &__description {
     grid-column: 1/7;
     font-size: 18px;
+    @include mq('tablet-lg') {
+      padding-left: 10%;
+    }
+
+    @include mq('tablet') {
+      padding-left: 0;
+    }
 
     &--left {
       grid-column: 7/13;
@@ -101,6 +130,20 @@
 
     > p {
       padding-bottom: 20px;
+    }
+  }
+}
+
+.grid__mobile {
+  @include mq('tablet-lg') {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    padding-inline: 20px;
+    width: 100%;
+
+    &--left {
+      flex-direction: column;
     }
   }
 }
