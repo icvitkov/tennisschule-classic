@@ -10,12 +10,12 @@ import Court from '@/assets/svgs/tennis-court.svg'
     <div class="grid">
       <h2 class="services__title">{{ $t('Our services for you') }}</h2>
       <div class="services__container">
-      <TsService :title="$t('Court rental per hour')" price="12.00 €">
+      <TsService :title="$t('Court rental per hour')" price="14.00 €">
           <template #svg>
             <Court class="icon" />
           </template>
         </TsService>
-        <TsService :title="$t('Racquet rental per hour')" price="4.00 €">
+        <TsService :title="$t('Racquet rental per hour')" price="5.00 €">
           <template #svg>
             <Racket class="icon" />
           </template>
