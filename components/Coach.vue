@@ -38,7 +38,7 @@
     </div>
   </section>
 
-  <section class="coach coach--left">
+  <!-- <section class="coach coach--left">
     <div class="grid grid__mobile grid__mobile--left">
       <img
         src="/images/coach2.png"
@@ -64,7 +64,7 @@
         </p>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <style lang="scss" scoped>
