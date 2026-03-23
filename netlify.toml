@@ -2,3 +2,4 @@
   from = "/*"
   to = "https://tennis-bol.com"
   status = 301
+  force = true
